@@ -38,6 +38,22 @@
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
 <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://hisham-hussein.github.io/discern.ai/feed.xml" title="Discern" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
 
 <script>
 function wrap_img(fn) {
@@ -95,7 +111,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      35 min read
+      32 min read
     
 </span></p>
 
@@ -1058,8 +1074,8 @@ Neutral      11479
 -             4288
 Negative      3102
 neutral          4
-negative         3
 positive         3
+negative         3
  Negative        1
 Name: Polarity, dtype: int64</pre>
 </div>
@@ -1716,298 +1732,10 @@ dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'News Details'</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># df[df['News Details'].isnull()]</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Sector</th>
-      <th>Company Name</th>
-      <th>Time</th>
-      <th>News Title</th>
-      <th>News Details</th>
-      <th>Polarity</th>
-      <th>Polarity Words</th>
-      <th>Oppening</th>
-      <th>The Highest</th>
-      <th>The Lowest</th>
-      <th>Closing</th>
-      <th>Changing</th>
-      <th>Changing%</th>
-      <th>The Quantity Handled</th>
-      <th>Total Current Value (SAR)</th>
-      <th>Number of Deals</th>
-      <th>Sector_en</th>
-      <th>Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>42</th>
-      <td>البنوك</td>
-      <td>بنك الرياض</td>
-      <td>09:08:18</td>
-      <td>يعلن بنك الرياض النتائج المالية الأولية للفترة...</td>
-      <td>NaN</td>
-      <td>-</td>
-      <td>-</td>
-      <td>14.10</td>
-      <td>14.38</td>
-      <td>14.00</td>
-      <td>14.32</td>
-      <td>0.44</td>
-      <td>3.17</td>
-      <td>1240491.0</td>
-      <td>17632591.10</td>
-      <td>454.0</td>
-      <td>Banks</td>
-      <td>2018-05-10 09:08:18</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>البنوك</td>
-      <td>بنك الرياض</td>
-      <td>09:15:43</td>
-      <td>يعلن بنك الرياض النتائج المالية الأولية للفترة...</td>
-      <td>NaN</td>
-      <td>-</td>
-      <td>-</td>
-      <td>17.44</td>
-      <td>17.44</td>
-      <td>17.28</td>
-      <td>17.28</td>
-      <td>-0.14</td>
-      <td>-0.80</td>
-      <td>1412731.0</td>
-      <td>24518465.52</td>
-      <td>434.0</td>
-      <td>Banks</td>
-      <td>2018-07-17 09:15:43</td>
-    </tr>
-    <tr>
-      <th>48</th>
-      <td>البنوك</td>
-      <td>بنك الرياض</td>
-      <td>08:57:33</td>
-      <td>يعلن بنك الرياض النتائج المالية السنوية للفترة...</td>
-      <td>NaN</td>
-      <td>-</td>
-      <td>-</td>
-      <td>13.66</td>
-      <td>13.90</td>
-      <td>13.60</td>
-      <td>13.71</td>
-      <td>0.12</td>
-      <td>0.88</td>
-      <td>1298818.0</td>
-      <td>17898699.10</td>
-      <td>458.0</td>
-      <td>Banks</td>
-      <td>2018-02-13 08:57:33</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>البنوك</td>
-      <td>بنك الرياض</td>
-      <td>15:08:08</td>
-      <td>يعلن بنك الرياض النتائج المالية الأولية للفترة...</td>
-      <td>NaN</td>
-      <td>-</td>
-      <td>-</td>
-      <td>11.16</td>
-      <td>11.16</td>
-      <td>11.04</td>
-      <td>11.04</td>
-      <td>-0.06</td>
-      <td>-0.54</td>
-      <td>476971.0</td>
-      <td>5288972.34</td>
-      <td>177.0</td>
-      <td>Banks</td>
-      <td>2017-10-18 15:08:08</td>
-    </tr>
-    <tr>
-      <th>61</th>
-      <td>البنوك</td>
-      <td>بنك الرياض</td>
-      <td>09:30:17</td>
-      <td>يعلن بنك الرياض النتائج المالية الأولية للفترة...</td>
-      <td>NaN</td>
-      <td>-</td>
-      <td>-</td>
-      <td>10.80</td>
-      <td>10.82</td>
-      <td>10.76</td>
-      <td>10.76</td>
-      <td>-0.09</td>
-      <td>-0.83</td>
-      <td>803455.0</td>
-      <td>8665789.58</td>
-      <td>262.0</td>
-      <td>Banks</td>
-      <td>2017-07-19 09:30:17</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>34335</th>
-      <td>التأمين</td>
-      <td>شركة بروج للتأمين التعاوني</td>
-      <td>13:54:22</td>
-      <td>تعلن شركة بروج للتأمين التعاوني النتائج المالي...</td>
-      <td>NaN</td>
-      <td>-</td>
-      <td>-</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Insurance</td>
-      <td>2013-07-20 13:54:22</td>
-    </tr>
-    <tr>
-      <th>34377</th>
-      <td>السلع الرأسمالية</td>
-      <td>شركة البابطين للطاقة والإتصالات</td>
-      <td>16:34:54</td>
-      <td>تعلن شركة البابطين للطاقة و الاتصالات النتائج ...</td>
-      <td>NaN</td>
-      <td>-</td>
-      <td>-</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Capital Goods</td>
-      <td>2014-07-19 16:34:54</td>
-    </tr>
-    <tr>
-      <th>34379</th>
-      <td>تجزئة الأغذية</td>
-      <td>الشركة السعودية للتسويق</td>
-      <td>15:15:53</td>
-      <td>تعلن الشركة السعودية للتسويق (أسواق المزرعة) ا...</td>
-      <td>NaN</td>
-      <td>-</td>
-      <td>-</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Food Segmentation</td>
-      <td>2014-07-19 15:15:53</td>
-    </tr>
-    <tr>
-      <th>34381</th>
-      <td>إنتاج الأغذية</td>
-      <td>شركة وفرة للصناعة والتنمية</td>
-      <td>14:38:31</td>
-      <td>تعلن شركة وفرة للصناعة والتنمية النتائج المالي...</td>
-      <td>NaN</td>
-      <td>-</td>
-      <td>-</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Food Production</td>
-      <td>2014-07-19 14:38:31</td>
-    </tr>
-    <tr>
-      <th>34382</th>
-      <td>التأمين</td>
-      <td>شركة المتوسط والخليج للتأمين وإعادة التأمين ال...</td>
-      <td>14:23:50</td>
-      <td>تعلن شركة المتوسط والخليج للتأمين وإعادة التأم...</td>
-      <td>NaN</td>
-      <td>-</td>
-      <td>-</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Insurance</td>
-      <td>2014-07-19 14:23:50</td>
-    </tr>
-  </tbody>
-</table>
-<p>4288 rows × 18 columns</p>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -2502,94 +2230,15 @@ dtype: int64</pre>
 
 <div class="output_area">
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-34-5f86b13ce289&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>df1<span class="ansi-yellow-intense-fg ansi-bold">.</span>head<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Sector</th>
-      <th>Company Name</th>
-      <th>Time</th>
-      <th>News Title</th>
-      <th>News Details</th>
-      <th>Polarity</th>
-      <th>Polarity Words</th>
-      <th>Oppening</th>
-      <th>The Highest</th>
-      <th>The Lowest</th>
-      <th>Closing</th>
-      <th>Changing</th>
-      <th>Changing%</th>
-      <th>The Quantity Handled</th>
-      <th>Total Current Value (SAR)</th>
-      <th>Number of Deals</th>
-      <th>Sector_en</th>
-      <th>Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>البنوك</td>
-      <td>بنك الجزيرة</td>
-      <td>12:07:52</td>
-      <td>يعلن بنك الجزيرة عن توصية مجلس إدارته توزيع أر...</td>
-      <td>يعلن بنك الجزيرة عن توصية مجلس إدارته توزيع أر...</td>
-      <td>Positive</td>
-      <td>ارباح سنوية - توزيع أرباح</td>
-      <td>9.07</td>
-      <td>9.12</td>
-      <td>8.93</td>
-      <td>8.96</td>
-      <td>0.11</td>
-      <td>1.24</td>
-      <td>1961798.0</td>
-      <td>17729676.1</td>
-      <td>514.0</td>
-      <td>Banks</td>
-      <td>2011-12-31 12:07:52</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>البنوك</td>
-      <td>البنك السعودي الفرنسي</td>
-      <td>15:22:03</td>
-      <td>يعلن البنك السعودي الفرنسي عن توصية مجلس الإدا...</td>
-      <td>بند توضيح  مقدمة يعلن البنك السعودي الفرنسي ع...</td>
-      <td>Positive</td>
-      <td>توزيع - ارباح</td>
-      <td>37.30</td>
-      <td>38.20</td>
-      <td>37.30</td>
-      <td>37.55</td>
-      <td>0.30</td>
-      <td>0.81</td>
-      <td>555205.0</td>
-      <td>20956971.9</td>
-      <td>634.0</td>
-      <td>Banks</td>
-      <td>2019-12-30 15:22:03</td>
-    </tr>
-  </tbody>
-</table>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name 'df1' is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -2661,149 +2310,6 @@ dtype: int64</pre>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Oppening</th>
-      <th>The Highest</th>
-      <th>The Lowest</th>
-      <th>Closing</th>
-      <th>Changing</th>
-      <th>Changing%</th>
-      <th>The Quantity Handled</th>
-      <th>Total Current Value (SAR)</th>
-      <th>Number of Deals</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>29993.00</td>
-      <td>29993.00</td>
-      <td>29993.00</td>
-      <td>29993.00</td>
-      <td>29993.00</td>
-      <td>29993.00</td>
-      <td>2.999300e+04</td>
-      <td>2.999300e+04</td>
-      <td>29993.00</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>35.32</td>
-      <td>35.89</td>
-      <td>34.81</td>
-      <td>36.02</td>
-      <td>-0.01</td>
-      <td>0.04</td>
-      <td>1.513561e+06</td>
-      <td>3.842513e+07</td>
-      <td>915.77</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>39.36</td>
-      <td>40.04</td>
-      <td>38.70</td>
-      <td>38.91</td>
-      <td>1.90</td>
-      <td>4.34</td>
-      <td>6.332587e+06</td>
-      <td>1.705804e+08</td>
-      <td>5485.46</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>-67.50</td>
-      <td>-100.00</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>15.90</td>
-      <td>16.14</td>
-      <td>15.70</td>
-      <td>16.46</td>
-      <td>-0.26</td>
-      <td>-0.98</td>
-      <td>1.672130e+05</td>
-      <td>4.812069e+06</td>
-      <td>211.00</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>25.25</td>
-      <td>25.65</td>
-      <td>24.90</td>
-      <td>25.50</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>4.767520e+05</td>
-      <td>1.371646e+07</td>
-      <td>457.00</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>42.50</td>
-      <td>43.20</td>
-      <td>41.90</td>
-      <td>42.92</td>
-      <td>0.25</td>
-      <td>0.98</td>
-      <td>1.250305e+06</td>
-      <td>3.415810e+07</td>
-      <td>973.00</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>686.27</td>
-      <td>692.81</td>
-      <td>663.40</td>
-      <td>683.01</td>
-      <td>95.00</td>
-      <td>351.85</td>
-      <td>4.179278e+08</td>
-      <td>1.586582e+10</td>
-      <td>540248.00</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -2861,25 +2367,6 @@ dtype: int64</pre>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Variable                                                                                   Date
-Unique                                                                                     2282
-Top Counts    2013-04-20: 108، 2011-01-19: 101، 2012-07-18: 101، 2012-01-21: 99، 2013-01-21: 91
-dtype: object</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -2894,71 +2381,6 @@ dtype: object</pre>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Variable</th>
-      <th>Unique</th>
-      <th>Top Counts</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Sector</td>
-      <td>22</td>
-      <td>التأمين: 6753، المواد الأساسية: 6216، السلع الرأسمالية: 2595، إنتاج الأغذية: 2126، إدارة وتطوير العقارات: 1728</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Company Name</td>
-      <td>206</td>
-      <td>شركة أبناء عبدالله عبدالمحسن الخضري: 450، شركة إتحاد عذيب للإتصالات: 331، شركة الباحة للإستثمار والتنمية: 316، الشركة السعودية الهندية للتأمين التعاوني: 300، شركة طيبة للإستثمار: 283</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Polarity</td>
-      <td>3</td>
-      <td>Positive: 15509، Neutral: 11483، Negative: 3106</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Date</td>
-      <td>2282</td>
-      <td>2013-04-20: 108، 2011-01-19: 101، 2012-07-18: 101، 2012-01-21: 99، 2013-01-21: 91</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -3016,78 +2438,10 @@ dtype: object</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pie_fig</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Polarity'</span><span class="p">]</span>
-             <span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-             <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-             <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">,</span>
-                   <span class="n">values</span><span class="o">=</span><span class="s1">'Polarity'</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">'index'</span><span class="p">,</span>
-                   <span class="n">title</span><span class="o">=</span><span class="s1">'Polarity Distribution'</span><span class="p">,</span>
-                   <span class="n">color</span><span class="o">=</span><span class="s1">'Polarity'</span><span class="p">,</span>
-                   <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">GnBu_r</span><span class="p">,</span>
-                   <span class="n">hole</span><span class="o">=</span><span class="mf">0.1</span><span class="p">))</span>
-
-
-<span class="n">pie_fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textinfo</span><span class="o">=</span><span class="s1">'percent+label+value'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># !pip install notebook ipywidgets</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<div>
-        
-        
-            <div id="0f83b6a7-cbba-4770-b0b1-59d26edf9f71" class="plotly-graph-div" style="height:525px; width:100%;"></div>
-            <script type="text/javascript">
-                require(["plotly"], function(Plotly) {
-                    window.PLOTLYENV=window.PLOTLYENV || {};
-                    
-                if (document.getElementById("0f83b6a7-cbba-4770-b0b1-59d26edf9f71")) {
-                    Plotly.newPlot(
-                        '0f83b6a7-cbba-4770-b0b1-59d26edf9f71',
-                        [{"customdata": [[15509], [11483], [3106]], "domain": {"x": [0.0, 1.0], "y": [0.0, 1.0]}, "hole": 0.1, "hovertemplate": "index=%{label}<br>Polarity=%{customdata[0]}<extra></extra>", "labels": ["Positive", "Neutral", "Negative"], "legendgroup": "", "marker": {"colors": ["rgb(8,64,129)", "rgb(8,104,172)", "rgb(43,140,190)"]}, "name": "", "showlegend": true, "textinfo": "percent+label+value", "type": "pie", "values": [15509, 11483, 3106]}],
-                        {"legend": {"tracegroupgap": 0}, "piecolorway": ["rgb(8,64,129)", "rgb(8,104,172)", "rgb(43,140,190)", "rgb(78,179,211)", "rgb(123,204,196)", "rgb(168,221,181)", "rgb(204,235,197)", "rgb(224,243,219)", "rgb(247,252,240)"], "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "white", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "white", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "#C8D4E3", "linecolor": "#C8D4E3", "minorgridcolor": "#C8D4E3", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "#C8D4E3", "linecolor": "#C8D4E3", "minorgridcolor": "#C8D4E3", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "white", "showlakes": true, "showland": true, "subunitcolor": "#C8D4E3"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "white", "polar": {"angularaxis": {"gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": ""}, "bgcolor": "white", "radialaxis": {"gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "white", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "showbackground": true, "ticks": "", "zerolinecolor": "#EBF0F8"}, "yaxis": {"backgroundcolor": "white", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "showbackground": true, "ticks": "", "zerolinecolor": "#EBF0F8"}, "zaxis": {"backgroundcolor": "white", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "showbackground": true, "ticks": "", "zerolinecolor": "#EBF0F8"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "#DFE8F3", "linecolor": "#A2B1C6", "ticks": ""}, "baxis": {"gridcolor": "#DFE8F3", "linecolor": "#A2B1C6", "ticks": ""}, "bgcolor": "white", "caxis": {"gridcolor": "#DFE8F3", "linecolor": "#A2B1C6", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "#EBF0F8", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "#EBF0F8", "zerolinewidth": 2}}}, "title": {"text": "Polarity Distribution"}},
-                        {"responsive": true}
-                    ).then(function(){
-                            
-var gd = document.getElementById('0f83b6a7-cbba-4770-b0b1-59d26edf9f71');
-var x = new MutationObserver(function (mutations, observer) {{
-        var display = window.getComputedStyle(gd).display;
-        if (!display || display === 'none') {{
-            console.log([gd, 'removed!']);
-            Plotly.purge(gd);
-            observer.disconnect();
-        }}
-}});
-
-// Listen for the removal of the full notebook cells
-var notebookContainer = gd.closest('#notebook-container');
-if (notebookContainer) {{
-    x.observe(notebookContainer, {childList: true});
-}}
-
-// Listen for the clearing of the current output cell
-var outputEl = gd.closest('.output');
-if (outputEl) {{
-    x.observe(outputEl, {childList: true});
-}}
-
-                        })
-                };
-                });
-            </script>
-        </div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -3101,12 +2455,37 @@ if (outputEl) {{
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Polarity'</span><span class="p">]</span>
- <span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
- <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
- <span class="o">.</span><span class="n">iplot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'pie'</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="s1">'index'</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">'Polarity'</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">hole</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">pull</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span>
-        <span class="n">textinfo</span><span class="o">=</span><span class="s1">'value+percent+label'</span><span class="p">,</span>
-        <span class="n">colorscale</span><span class="o">=</span><span class="s1">'-gnbu'</span><span class="p">,</span> <span class="n">textcolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Polarity Distribution'</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="p">(</span>  <span class="n">df</span><span class="p">[</span><span class="s1">'Polarity'</span><span class="p">]</span>
+       <span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+       <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+       <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">,</span>
+             <span class="n">values</span><span class="o">=</span><span class="s1">'Polarity'</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">'index'</span><span class="p">,</span>
+             <span class="n">title</span><span class="o">=</span><span class="s1">'Polarity Distribution'</span><span class="p">,</span>
+             <span class="n">color</span><span class="o">=</span><span class="s1">'Polarity'</span><span class="p">,</span>
+             <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">qualitative</span><span class="o">.</span><span class="n">Prism</span><span class="p">,</span>
+             <span class="n">hole</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+       <span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textinfo</span><span class="o">=</span><span class="s1">'percent+label+value'</span><span class="p">)</span>
+    
+<span class="p">)</span>
+
+<span class="n">fig</span>
 </pre></div>
 
     </div>
@@ -3123,21 +2502,20 @@ if (outputEl) {{
 <div>
         
         
-            <div id="53890bdc-3365-4506-b41c-1133eaaf53d2" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <div id="aa54eb02-1518-4013-a4ac-87a2ccfb339c" class="plotly-graph-div" style="height:525px; width:100%;"></div>
             <script type="text/javascript">
                 require(["plotly"], function(Plotly) {
                     window.PLOTLYENV=window.PLOTLYENV || {};
-                    window.PLOTLYENV.BASE_URL='https://plotly.com';
                     
-                if (document.getElementById("53890bdc-3365-4506-b41c-1133eaaf53d2")) {
+                if (document.getElementById("aa54eb02-1518-4013-a4ac-87a2ccfb339c")) {
                     Plotly.newPlot(
-                        '53890bdc-3365-4506-b41c-1133eaaf53d2',
-                        [{"hole": 0.1, "labels": ["Positive", "Neutral", "Negative"], "marker": {"colors": ["rgba(67, 162, 202, 1.0)", "rgba(168, 221, 181, 1.0)", "rgba(224, 243, 219, 1.0)"]}, "name": "", "pull": 0.005, "sort": true, "textfont": {"color": "black"}, "textinfo": "value+percent+label", "type": "pie", "values": [15509, 11483, 3106]}],
-                        {"legend": {"bgcolor": "#FFFFFF", "font": {"color": "#4D5663"}}, "paper_bgcolor": "#FFFFFF", "plot_bgcolor": "#FFFFFF", "showlegend": false, "title": "Polarity Distribution", "titlefont": {"color": "#4D5663"}},
-                        {"showLink": true, "linkText": "Export to plotly.com", "plotlyServerURL": "https://plotly.com", "responsive": true}
+                        'aa54eb02-1518-4013-a4ac-87a2ccfb339c',
+                        [{"customdata": [[15509], [11483], [3106]], "domain": {"x": [0.0, 1.0], "y": [0.0, 1.0]}, "hole": 0.1, "hovertemplate": "index=%{label}<br>Polarity=%{customdata[0]}<extra></extra>", "labels": ["Positive", "Neutral", "Negative"], "legendgroup": "", "marker": {"colors": ["rgb(95, 70, 144)", "rgb(29, 105, 150)", "rgb(56, 166, 165)"]}, "name": "", "showlegend": true, "textinfo": "percent+label+value", "type": "pie", "values": [15509, 11483, 3106]}],
+                        {"legend": {"tracegroupgap": 0}, "piecolorway": ["rgb(95, 70, 144)", "rgb(29, 105, 150)", "rgb(56, 166, 165)", "rgb(15, 133, 84)", "rgb(115, 175, 72)", "rgb(237, 173, 8)", "rgb(225, 124, 5)", "rgb(204, 80, 62)", "rgb(148, 52, 110)", "rgb(111, 64, 112)", "rgb(102, 102, 102)"], "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "white", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "white", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "#C8D4E3", "linecolor": "#C8D4E3", "minorgridcolor": "#C8D4E3", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "#C8D4E3", "linecolor": "#C8D4E3", "minorgridcolor": "#C8D4E3", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "white", "showlakes": true, "showland": true, "subunitcolor": "#C8D4E3"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "white", "polar": {"angularaxis": {"gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": ""}, "bgcolor": "white", "radialaxis": {"gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "white", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "showbackground": true, "ticks": "", "zerolinecolor": "#EBF0F8"}, "yaxis": {"backgroundcolor": "white", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "showbackground": true, "ticks": "", "zerolinecolor": "#EBF0F8"}, "zaxis": {"backgroundcolor": "white", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "showbackground": true, "ticks": "", "zerolinecolor": "#EBF0F8"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "#DFE8F3", "linecolor": "#A2B1C6", "ticks": ""}, "baxis": {"gridcolor": "#DFE8F3", "linecolor": "#A2B1C6", "ticks": ""}, "bgcolor": "white", "caxis": {"gridcolor": "#DFE8F3", "linecolor": "#A2B1C6", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "#EBF0F8", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "#EBF0F8", "zerolinewidth": 2}}}, "title": {"text": "Polarity Distribution"}},
+                        {"responsive": true}
                     ).then(function(){
                             
-var gd = document.getElementById('53890bdc-3365-4506-b41c-1133eaaf53d2');
+var gd = document.getElementById('aa54eb02-1518-4013-a4ac-87a2ccfb339c');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -3183,86 +2561,6 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_most</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Sector_en'</span><span class="p">]</span>
- <span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
- <span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n_most</span><span class="p">)</span>
- <span class="o">.</span><span class="n">iplot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'orange'</span><span class="p">,</span> <span class="n">colorscale</span><span class="o">=</span><span class="s1">'rdylbu'</span><span class="p">,</span><span class="n">yTitle</span><span class="o">=</span><span class="s1">'# of News Articles'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Most </span><span class="si">{</span><span class="n">n_most</span><span class="si">}</span><span class="s1"> Featured Sectors'</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<div>
-        
-        
-            <div id="3fe3af73-f543-4eed-9ea0-22a02aa4da6f" class="plotly-graph-div" style="height:525px; width:100%;"></div>
-            <script type="text/javascript">
-                require(["plotly"], function(Plotly) {
-                    window.PLOTLYENV=window.PLOTLYENV || {};
-                    window.PLOTLYENV.BASE_URL='https://plotly.com';
-                    
-                if (document.getElementById("3fe3af73-f543-4eed-9ea0-22a02aa4da6f")) {
-                    Plotly.newPlot(
-                        '3fe3af73-f543-4eed-9ea0-22a02aa4da6f',
-                        [{"marker": {"color": "rgba(255, 153, 51, 0.6)", "line": {"color": "rgba(255, 153, 51, 1.0)", "width": 1}}, "name": "Sector_en", "orientation": "v", "text": "", "type": "bar", "x": ["Insurance", "Basic Materials", "Capital Goods", "Food Production", "Real Estate M & D", "Banks", "Retail Of Luxury Goods", "Telecommunications", "Consumer Services", "Transport"], "y": [6753, 6216, 2595, 2126, 1728, 1252, 1035, 1001, 987, 910]}],
-                        {"legend": {"bgcolor": "#FFFFFF", "font": {"color": "#4D5663"}}, "paper_bgcolor": "#FFFFFF", "plot_bgcolor": "#FFFFFF", "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "white", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "white", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "#C8D4E3", "linecolor": "#C8D4E3", "minorgridcolor": "#C8D4E3", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "#C8D4E3", "linecolor": "#C8D4E3", "minorgridcolor": "#C8D4E3", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "white", "showlakes": true, "showland": true, "subunitcolor": "#C8D4E3"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "white", "polar": {"angularaxis": {"gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": ""}, "bgcolor": "white", "radialaxis": {"gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "white", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "showbackground": true, "ticks": "", "zerolinecolor": "#EBF0F8"}, "yaxis": {"backgroundcolor": "white", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "showbackground": true, "ticks": "", "zerolinecolor": "#EBF0F8"}, "zaxis": {"backgroundcolor": "white", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "showbackground": true, "ticks": "", "zerolinecolor": "#EBF0F8"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "#DFE8F3", "linecolor": "#A2B1C6", "ticks": ""}, "baxis": {"gridcolor": "#DFE8F3", "linecolor": "#A2B1C6", "ticks": ""}, "bgcolor": "white", "caxis": {"gridcolor": "#DFE8F3", "linecolor": "#A2B1C6", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "#EBF0F8", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "#EBF0F8", "zerolinewidth": 2}}}, "title": {"font": {"color": "#4D5663"}, "text": "Most 10 Featured Sectors"}, "xaxis": {"gridcolor": "#E1E5ED", "showgrid": true, "tickfont": {"color": "#4D5663"}, "title": {"font": {"color": "#4D5663"}, "text": ""}, "zerolinecolor": "#E1E5ED"}, "yaxis": {"gridcolor": "#E1E5ED", "showgrid": true, "tickfont": {"color": "#4D5663"}, "title": {"font": {"color": "#4D5663"}, "text": "# of News Articles"}, "zerolinecolor": "#E1E5ED"}},
-                        {"showLink": true, "linkText": "Export to plotly.com", "plotlyServerURL": "https://plotly.com", "responsive": true}
-                    ).then(function(){
-                            
-var gd = document.getElementById('3fe3af73-f543-4eed-9ea0-22a02aa4da6f');
-var x = new MutationObserver(function (mutations, observer) {{
-        var display = window.getComputedStyle(gd).display;
-        if (!display || display === 'none') {{
-            console.log([gd, 'removed!']);
-            Plotly.purge(gd);
-            observer.disconnect();
-        }}
-}});
-
-// Listen for the removal of the full notebook cells
-var notebookContainer = gd.closest('#notebook-container');
-if (notebookContainer) {{
-    x.observe(notebookContainer, {childList: true});
-}}
-
-// Listen for the clearing of the current output cell
-var outputEl = gd.closest('.output');
-if (outputEl) {{
-    x.observe(outputEl, {childList: true});
-}}
-
-                        })
-                };
-                });
-            </script>
-        </div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
     
     
 <div class="cell border-box-sizing code_cell rendered">
